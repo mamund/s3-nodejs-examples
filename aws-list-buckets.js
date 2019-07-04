@@ -1,15 +1,16 @@
 /*
   LIST S3 buckets for this credential pair
-  Relies upon credentials stored in ~/.aws/crendentials
+  Relies on  ~/.aws/credentials
 */
 
-// vars for this operation
-var params = {};
-
-// get instance of s3 api
+// modules
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
+// params
+var params = {};
+
+// action
 s3.listBuckets(params, function(err,data) {
   if(err) {
     console.log(err,err.stack);
